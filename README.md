@@ -46,3 +46,8 @@ Even if an experiment result shows a statistically significant difference in an 
     <p align="center">
    <img src="imgs/3.PNG" height="100" weight="250"/>
    <p align="center">
+    Toggle Sidebar
+
+## 2. [Experiment Size](https://www.youtube.com/watch?v=QBONLUp7i28)
+
+We can use the knowledge of our desired practical significance boundary to plan out our experiment. By knowing how many observations we need in order to detect our desired effect to our desired level of reliability, we can see how long we would need to run our experiment and whether or not it is feasible.
