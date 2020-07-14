@@ -46,10 +46,21 @@ Even if an experiment result shows a statistically significant difference in an 
     <p align="center">
    <img src="imgs/3.PNG" height="100" weight="250"/>
    <p align="center">
-    Toggle Sidebar
 
 ## 3. [Experiment Size](https://www.youtube.com/watch?v=QBONLUp7i28)
 
 We can use the knowledge of our desired practical significance boundary to plan out our experiment by knowing how many observations we need in order to detect our desired effect to our desired level of reliability, we can see how long we would need to run our experiment and whether or not it is feasible. please check out [this notebook](https://github.com/A2Amir/Statistical-Considerations-in-Testing/blob/master/code/Experiment_Size.ipynb) to get more onformation. 
 
 
+## 3. Using Dummy Tests
+
+When it comes to designing an experiment, it might be useful to run a **dummy test** as a predecessor to or as part of that process. **In a dummy test, you will implement the same steps that you would in an actual experiment to assign the experimental units into groups. However, the experimental manipulation won't actually be implemented, and the groups will be treated equivalently**.
+
+There are multiple reasons to run a dummy test:
+* First, a dummy test can expose if there are any errors in the randomization or assignment procedures. A short dummy test can be worth the investment if an invariant metric is found to have a statistically significant difference, or if some other systematic bias is identified, because it can help avoid larger problems down the line. 
+    <p align="center">
+   <img src="imgs/5.PNG" height="300" weight="500"/>
+   <p align="center">
+* A second reason to run a dummy test is to collect data on metrics' behaviors. If historic data is not enough to predict the outcome of recorded metrics or allow for experiment duration to be computed, then a dummy test can be useful for getting baselines.
+
+Of course, performing a dummy test requires an investment of resources, the most important of which is time. If time is of the essence, then you may need to just go ahead with the experiment, keeping an eye on invariant metrics for any trouble. An alternative approach is to perform a hybrid test. In the A/B testing paradigm, this can take the form of an A/A/B test. That is, we split the data into three groups: two control and one experimental. A comparison between control groups can be used to learn about null-environment properties before making inferences on the effect of the experimental manipulation.
