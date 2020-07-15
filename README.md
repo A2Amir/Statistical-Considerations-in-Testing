@@ -71,4 +71,25 @@ Up until now, you've been using **standard hypothesis tests on means of normal d
 
 * In this [notebook](https://github.com/A2Amir/Statistical-Considerations-in-Testing/blob/master/code/Non-Parametric_Tests_Part_1.ipynb), you'll cover **two non-parametric approaches (Bootstrapping, Permutation Tests)** that use resampling of the data to make inferences about distributions and differences.
 
-* In this [notebook](), I'll cover you **two onther non-parametric approaches (Rank-Sum Test (Mann-Whitney), Sign  Tests)** that are fairly different from the two previous approaches and dont use resamplng to make inferences about distributions and differences.They use the collected data to compute a test result.
+* In this [notebook](https://github.com/A2Amir/Statistical-Considerations-in-Testing/blob/master/code/Non-Parametric_Tests_Part_2.ipynb), I'll cover you **two onther non-parametric approaches (Rank-Sum Test (Mann-Whitney), Sign  Tests)** that are fairly different from the two previous approaches and dont use resamplng to make inferences about distributions and differences.They use the collected data to compute a test result.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
