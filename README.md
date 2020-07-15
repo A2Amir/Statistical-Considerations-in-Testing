@@ -73,23 +73,36 @@ Up until now, you've been using **standard hypothesis tests on means of normal d
 
 * In this [notebook](https://github.com/A2Amir/Statistical-Considerations-in-Testing/blob/master/code/Non-Parametric_Tests_Part_2.ipynb), I'll cover you **two onther non-parametric approaches (Rank-Sum Test (Mann-Whitney), Sign  Tests)** that are fairly different from the two previous approaches and dont use resamplng to make inferences about distributions and differences.They use the collected data to compute a test result.
 
+## 5. Analyzing Multiple Metrics
 
 
 
 
+If you're tracking multiple evaluation metrics, make sure that you're aware of how the Type I error rates on individual metrics can affect the overall chance of making some kind of Type I error. The simplest case we can consider is if we have _n_ independent evaluation metrics, and that seeing one with a statistically significant result would be enough to call the manipulation a success. In this case, the probability of making at least one Type I error is given by α_over = 1 - (1-α_ind)^n illustrated in the below image for individual α_ind=.05  and α_ind = .01.
+
+   <p align="center">
+   <img src="imgs/6.PNG" height="300" weight="400"/>
+   <p align="center">
+    
+To protect against this, we need to introduce a correction factor on the individual test error rate so that the overall error rate is at most the desired level. A conservative approach is to divide the overall error rate by the number of metrics tested:
+
+          α_ind=α_over/n
+
+This is known as **the Bonferroni correction**. If we assume independence between metrics, we can do a little bit better with the **Šidák correction**:
+
+          α_ind = 1−(1−α_over)^1/n
+          
+          
+  <p align="center">
+  <img src="imgs/7.PNG" height="300" weight="500"/>
+  <p align="center">
+   
+   
+   In real life, evaluation scenarios are rarely so straightforward. Metrics will likely be correlated in some way, rather than being independent. If a positive correlation exists, then knowing the outcome of one metric will make it more likely for a correlated metric to also point in the same way. In this case, the corrections above will be more conservative than necessary, resulting in an overall error rate smaller than the desired level. (In cases of negative correlation, the true error rate could go either way, depending on the types of tests performed.)
+
+In addition, we might need multiple metrics to show statistical significance to call an experiment a success, or there may be different degrees of success depending on which metrics appear to be moved by the manipulation. One metric may not be enough to make it worth deploying a change tested in an experiment. Reducing the individual error rate will make it harder for a truly significant effect to show up as statistically significant. That is, reducing the Type I error rate will also increase the Type II error rate – another conservative shift.
+
+Ultimately, there is a small balancing act when it comes to selecting an error-controlling scheme. Being fully conservative with one of the simple corrections above means that you increase the risk of failing to roll out changes that actually have an impact on metrics. Consider the level of dependence between metrics and what results are needed to declare a success to calibrate the right balance in error rates. If you need to see a significant change in all of your metrics to proceed with it, you might not need a correction factor at all. You can also use dummy test results, bootstrapping, and permutation approaches to plan significance thresholds. Finally, don't forget that practical significance can be an all-important quality that overrides other statistical significance findings.
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+ it's worth noting that these cautions also apply to invariant metrics. The more invariant metrics you test, the more likely it will be that some test will show a statistically significant difference even if the groups tested are drawn from equivalent populations. However, it might not be a good idea to apply a correction factor to individual tests since we want to avoid larger issues with interpretation later on.
