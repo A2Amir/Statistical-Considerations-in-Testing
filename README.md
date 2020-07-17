@@ -1,5 +1,8 @@
 # Statistical Considerations in Testing
 
+
+In [the last repository](https://github.com/A2Amir/Experimental-Design), I looked at the types of experiments, how to sample, how to measure results, how to control variables, validity, bias, and ethics of experimentation.
+
  You might think that the importance of statistics in experiment design lies only in analyzing the results of an experiment but in reality there's actually more importance for statistics in your experimental design rather than just coming in at the end.  
 
 As known Factors like how much data  we will need before we can judge our experiment's success on solid grounds and the size of the effect that you want to see can have a major effect on how much data you need to collect and how long it will take before you get your results In this Repos  
