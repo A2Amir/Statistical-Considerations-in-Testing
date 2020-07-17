@@ -106,3 +106,7 @@ Ultimately, there is a small balancing act when it comes to selecting an error-c
 
 
  it's worth noting that these cautions also apply to invariant metrics. The more invariant metrics you test, the more likely it will be that some test will show a statistically significant difference even if the groups tested are drawn from equivalent populations. However, it might not be a good idea to apply a correction factor to individual tests since we want to avoid larger issues with interpretation later on.
+ 
+ # Early Stopping
+
+If you peek at the results of an experiment before data collection is complete, and choose to stop early because the test is showing statistical significance, you run the risk of a significant increase in your Type I error rate: believing that your experiment had an effect, when in fact it did not. In [this notebook](), I'll duplicate the assertion of **doing a single peek halfway through the run-time will increase a base Type I error rate** from 5% to about 8.6%  for an experiment based on a single traditional statistical test.
