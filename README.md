@@ -113,3 +113,7 @@ Ultimately, there is a small balancing act when it comes to selecting an error-c
  # Early Stopping
 
 If you peek at the results of an experiment before data collection is complete, and choose to stop early because the test is showing statistical significance, you run the risk of a significant increase in your Type I error rate: believing that your experiment had an effect, when in fact it did not. In [this notebook](https://github.com/A2Amir/Statistical-Considerations-in-Testing/blob/master/code/Early_Stopping.ipynb), I'll duplicate the assertion of **doing a single peek halfway through the run-time will increase a base Type I error rate** from 5% to about 8.6%  for an experiment based on a single traditional statistical test.
+
+
+
+**In the [next repository](https://github.com/A2Amir/A-B-Testing-Case-Study) I am going throgh the design process(A-B Testing Case Study) for a web-based experiment from scratch.**
